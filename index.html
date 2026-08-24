@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Google Logo Challenge</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <img
+        src="assets/gdg-header.png"
+        class="gdg-logo"
+        alt="GDG on Campus Taif University"
+    >
+
+    <button
+        id="languageBtn"
+        class="language-btn"
+        type="button"
+    >
+        EN
+    </button>
+
+</header>
+
+
+<main class="container">
+
+    <section id="home" class="screen active">
+
+        <div class="mini-code">
+            &lt;/&gt;
+        </div>
+
+        <div class="question-number">
+            01
+        </div>
+
+        <p
+            id="eyebrow"
+            class="eyebrow"
+        >
+            تحدّي الشعارات
+        </p>
+
+        <h1 id="title">
+            أي شعار يخص Google؟
+        </h1>
+
+        <p
+            id="description"
+            class="description"
+        >
+            اختر الشعار الصحيح.
+        </p>
+
+        <button
+            id="startBtn"
+            class="main-btn"
+            type="button"
+        >
+            ابدأ اللعبة ←
+        </button>
+
+    </section>
+
+
+    <section id="game" class="screen">
+
+        <div class="game-header">
+
+            <span id="gameLabel">
+                السؤال 01
+            </span>
+
+            <span>
+                🤔
+            </span>
+
+        </div>
+
+
+        <div class="game-content">
+
+            <p
+                id="gameEyebrow"
+                class="eyebrow"
+            >
+                اختبر معلوماتك
+            </p>
+
+            <h2 id="question">
+                أي شعار يخص Google؟
+            </h2>
+
+            <div
+                id="logosGrid"
+                class="logos-grid"
+            ></div>
+
+            <div
+                id="feedback"
+                class="feedback"
+            ></div>
+
+            <button
+                id="againBtn"
+                class="main-btn hidden"
+                type="button"
+            >
+                حاول مرة أخرى ↻
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section id="result" class="screen">
+
+        <div class="result-icon">
+            ✓
+        </div>
+
+        <p class="eyebrow">
+            GAME OVER
+        </p>
+
+        <h2 id="resultTitle">
+            انتهت اللعبة
+        </h2>
+
+        <p
+            id="resultText"
+            class="description"
+        >
+            شكرًا على اللعب.
+        </p>
+
+        <button
+            id="restartBtn"
+            class="main-btn"
+            type="button"
+        >
+            العب مرة أخرى ↻
+        </button>
+
+    </section>
+
+</main>
+
+
+<footer>
+    GDG on Campus • Taif University
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

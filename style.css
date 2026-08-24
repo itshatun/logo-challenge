@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    color: #202124;
+    min-height: 100vh;
+}
+
+.header {
+    height: 90px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+}
+
+.gdg-logo {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+.language-btn {
+    background: white;
+    border: 1px solid #d9dce1;
+    border-radius: 30px;
+
+    padding: 10px 22px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 55px auto;
+}
+
+.screen {
+    display: none;
+
+    background: white;
+    border: 1px solid #e0e3e7;
+    border-radius: 28px;
+
+    padding: 70px;
+
+    min-height: 650px;
+
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+.mini-code {
+    color: #4285f4;
+    font-size: 28px;
+    font-weight: 800;
+
+    margin-bottom: 30px;
+}
+
+.question-number {
+    color: #9aa0a6;
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: #4285f4;
+    font-size: 14px;
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    margin-bottom: 18px;
+}
+
+.description {
+    color: #6b7280;
+    font-size: 18px;
+    line-height: 1.8;
+
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.main-btn {
+    width: 100%;
+    max-width: 700px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #4285f4;
+    color: white;
+
+    padding: 18px 25px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.main-btn:hover {
+    transform: translateY(-2px);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #9aa0a6;
+    font-weight: 700;
+
+    margin-bottom: 45px;
+}
+
+.game-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.logos-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    margin: 40px auto;
+}
+
+.logo-card {
+    background: white;
+
+    border: 1px solid #e1e4e8;
+    border-radius: 20px;
+
+    min-height: 230px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    overflow: hidden;
+}
+
+.logo-card:hover {
+    transform: translateY(-4px);
+    border-color: #4285f4;
+}
+
+.logo-card img {
+    width: 130px;
+    height: 130px;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+}
+
+.logo-card img[src*="google"] {
+    transform: scale(1.55);
+}
+
+.logo-card img[src*="apple"] {
+    transform: scale(1.35);
+}
+
+.logo-card img[src*="netflix"] {
+    transform: scale(1.25);
+}
+
+.logo-card img[src*="spotify"] {
+    transform: scale(1);
+}
+
+.logo-card img[src*="BMW"] {
+    transform: scale(1.55);
+}
+
+.logo-card img[src*="WhatsApp"] {
+    transform: scale(0.85);
+}
+
+.logo-card img[src*="chrome"] {
+    transform: scale(1.35);
+}
+
+.logo-card img[src*="Phone"] {
+    transform: scale(0.85);
+}
+
+.logo-card img[src*="SnapChat"] {
+    transform: scale(1.35);
+}
+
+.logo-card img[src*="Safari"] {
+    transform: scale(1.35);
+}
+
+.logo-card.selected {
+    border: 3px solid #4285f4;
+}
+
+.logo-card.wrong {
+    border: 3px solid #ea4335;
+    animation: shake 0.3s;
+}
+
+.feedback {
+    min-height: 40px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    margin: 20px 0;
+}
+
+.feedback.error {
+    color: #ea4335;
+}
+
+.feedback.success {
+    color: #34a853;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-icon {
+    font-size: 80px;
+    margin: 30px;
+}
+
+footer {
+    text-align: center;
+
+    color: #9aa0a6;
+
+    margin: 30px;
+    font-size: 14px;
+}
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 0 20px;
+    }
+
+   .gdg-logo {
+    width: 220px;
+}
+
+    .container {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .screen {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+
+    .logos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo-card img[src*="google"] {
+        transform: scale(1.45);
+    }
+
+    .logo-card img[src*="apple"] {
+        transform: scale(1.35);
+    }
+
+    .logo-card img[src*="netflix"] {
+        transform: scale(1.25);
+    }
+
+    .logo-card img[src*="spotify"] {
+        transform: scale(1);
+    }
+
+    .logo-card img[src*="BMW"] {
+        transform: scale(1.55);
+    }
+
+    .logo-card img[src*="WhatsApp"] {
+        transform: scale(1.15);
+    }
+
+    .logo-card img[src*="chrome"] {
+        transform: scale(1.05);
+    }
+}
