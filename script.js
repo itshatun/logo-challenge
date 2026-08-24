@@ -9,19 +9,19 @@ const questions = [
         logos: [
             {
                 name: "Apple",
-                image: "assets/apple.png"
+                image: "apple.png"
             },
             {
                 name: "Google",
-                image: "assets/google.png"
+                image: "google.png"
             },
             {
                 name: "Netflix",
-                image: "assets/netflix.png"
+                image: "netflix.png"
             },
             {
                 name: "Spotify",
-                image: "assets/spotify.png"
+                image: "spotify.png"
             }
         ],
         correct: 1
@@ -34,19 +34,19 @@ const questions = [
         logos: [
             {
                 name: "Gmail",
-                image: "assets/gmail.png"
+                image: "gmail.png"
             },
             {
                 name: "Taif University",
-                image: "assets/TU.png"
+                image: "TU.png"
             },
             {
                 name: "BMW",
-                image: "assets/BMW.png"
+                image: "BMW.png"
             },
             {
                 name: "WhatsApp",
-                image: "assets/WhatsApp.png"
+                image: "WhatsApp.png"
             }
         ],
         correct: 0
@@ -59,19 +59,19 @@ const questions = [
         logos: [
             {
                 name: "Phone",
-                image: "assets/Phone.png"
+                image: "Phone.png"
             },
             {
                 name: "Chrome",
-                image: "assets/chrome.png"
+                image: "chrome.png"
             },
             {
                 name: "Snapchat",
-                image: "assets/SnapChat.png"
+                image: "SnapChat.png"
             },
             {
                 name: "Safari",
-                image: "assets/Safari.png"
+                image: "Safari.png"
             }
         ],
         correct: 1
@@ -83,23 +83,23 @@ const questions = [
         },
         logos: [
             {
-                name: "Google Drive",
-                image: "assets/Drive.png"
-            },
-            {
                 name: "iCloud",
-                image: "assets/Iclaude.png"
+                image: "Iclaude.png"
             },
             {
                 name: "Discord",
-                image: "assets/Discord.png"
+                image: "Discord.png"
+            },
+            {
+                name: "Google Drive",
+                image: "Drive.png"
             },
             {
                 name: "YouTube",
-                image: "assets/YouTube.webp"
+                image: "YouTube.webp"
             }
         ],
-        correct: 0
+        correct: 2
     },
     {
         question: {
@@ -108,23 +108,23 @@ const questions = [
         },
         logos: [
             {
+                name: "TikTok",
+                image: "TikTok.png"
+            },
+            {
                 name: "Gemini",
-                image: "assets/Gemini.png"
+                image: "Gemini.png"
             },
             {
                 name: "ChatGPT",
-                image: "assets/ChatGPT.png"
-            },
-            {
-                name: "TikTok",
-                image: "assets/TikTok.png"
+                image: "ChatGPT.png"
             },
             {
                 name: "PlayStation",
-                image: "assets/PlayStation.png"
+                image: "PlayStation.png"
             }
         ],
-        correct: 0
+        correct: 1
     }
 ];
 
@@ -145,7 +145,6 @@ const logosGrid = $("logosGrid");
 const feedback = $("feedback");
 
 function showScreen(screen) {
-
     document
         .querySelectorAll(".screen")
         .forEach(section => {
@@ -161,7 +160,6 @@ function showScreen(screen) {
 }
 
 function startGame() {
-
     currentQuestion = 0;
 
     showScreen(game);
@@ -170,7 +168,6 @@ function startGame() {
 }
 
 function renderQuestion() {
-
     const question = questions[currentQuestion];
 
     logosGrid.innerHTML = "";
@@ -190,7 +187,6 @@ function renderQuestion() {
         question.question[language];
 
     question.logos.forEach((logo, index) => {
-
         const card = document.createElement("button");
 
         card.type = "button";
@@ -206,35 +202,28 @@ function renderQuestion() {
         card.appendChild(image);
 
         card.addEventListener("click", () => {
-
             selectLogo(card, index);
-
         });
 
         logosGrid.appendChild(card);
-
     });
 }
 
 function selectLogo(card, index) {
-
     const question = questions[currentQuestion];
 
     document
         .querySelectorAll(".logo-card")
         .forEach(item => {
-
             item.classList.remove(
                 "selected",
                 "wrong"
             );
-
         });
 
     card.classList.add("selected");
 
     if (index === question.correct) {
-
         card.classList.remove("selected");
 
         card.classList.add("wrong");
@@ -259,24 +248,17 @@ function selectLogo(card, index) {
             : "✓ Correct answer";
 
     setTimeout(() => {
-
         currentQuestion++;
 
         if (currentQuestion < questions.length) {
-
             renderQuestion();
-
         } else {
-
             showScreen(result);
-
         }
-
     }, 700);
 }
 
 function restartGame() {
-
     currentQuestion = 0;
 
     showScreen(game);
@@ -285,7 +267,6 @@ function restartGame() {
 }
 
 function updateLanguage() {
-
     document.documentElement.lang = language;
 
     document.documentElement.dir =
@@ -339,9 +320,7 @@ function updateLanguage() {
             : "PLAY AGAIN ↻";
 
     if (game.classList.contains("active")) {
-
         renderQuestion();
-
     }
 }
 
@@ -363,14 +342,12 @@ againBtn.addEventListener(
 languageBtn.addEventListener(
     "click",
     () => {
-
         language =
             language === "ar"
                 ? "en"
                 : "ar";
 
         updateLanguage();
-
     }
 );
 
